@@ -1,0 +1,17 @@
+*{margin:0; padding:0;}
+
+#container{
+  width:100vw;
+  height:100vh;
+  background-color: #ccc;
+
+  &>div{
+    width:200px;
+    height:200px;
+
+  }
+  
+  
+  
+}
+
