@@ -6,44 +6,82 @@
 
 @mixin position ($left, $top){
   position: absolute;
-  left:(200px+$left);
-  top:(100px+$top);
+  left:(100px+$left);
+  top:(50px+$top);
 }
+@mixin setting {
+  opacity: 0.5;
+  mix-blend-mode: multiply
+}
+  // @mixin moving ($a){
+  @keyframes move{
+      0% {
+        left:0px;
+        top:0px;
+      }
+      100% {
+        left:200+(var(--position));
+        top:100+(var(--position));
+      
+      }
+    }
+  // }
 
 
-// mixin 굳이 안써도 될것 같지만 연습을 위해 시도함
-// 하나의 mixin에 변수를 두개를 넣는 방법은 없을까 귀찮은데
+  // @keyframes도 변수가 있을것 같다
+  
+  // 움직임까지 함수로 표현하려니까 머리아프다
+
+  // mixin 굳이 안써도 될것 같지만 연습을 위해 시도함
+  // 하나의 mixin에 변수를 두개를 넣는 방법은 없을까 귀찮은데
 // 변수를 여러개 지정하는 방법을 찾음
 // 뱐수의 이름을 지정할때 a,b,c등이 아닌 속성명으로 정리하는 것이 편리하겠다
+
+
+// 하나의 mixin에 변수를 두개쓰는 방법을 찾아서 써봤는데 적용이 안됨 --> 왜 뒤의 값만 안될까?
+// 읭 다시 live server를 여니까 적용됐다 오류였나보다
+
+// 내 멋대로 색을 정했더니.....칙칙해졌다......
+
 
 
 #container{
   width:100vw;
   height:100vh;
-  background-color: #ccc;
+  // background-color: #ccc;
 
   &>div{
     width:200px;
     height:200px;
+    --position:100px
   }
   &>div:nth-child(1){
     @include color(red);
-    @include position ( $left:0, $top:0);
+    @include position ( $left:100, $top:0);
+    @include setting; 
+    // @include moving($)
+    animation: 1s move infinite;
   }
 
   &>div:nth-child(2){
     @include color(blue);
-    @include position($left:200, $top:20);
+    @include position($left:50, $top:100);
+    @include setting; 
+    animation: 1s move infinite;
   }
   
   &>div:nth-child(3){
     @include color(green);
-    @include position($left:300, $top:30);
+    @include position($left:200, $top:30);
+    @include setting ;
+    animation: 1s move infinite;
   }
   
   &>div:nth-child(4){
     @include color(purple);
-    @include position($left:400, $top: 40);
+    @include position($left:150, $top: 150);
+    @include setting ;
+    animation: 1s move infinite;
   }
 }
 

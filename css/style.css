@@ -3,42 +3,81 @@
   padding: 0;
 }
 
+@-webkit-keyframes move {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    left: 200var(--position);
+    top: 100var(--position);
+  }
+}
+
+@keyframes move {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    left: 200var(--position);
+    top: 100var(--position);
+  }
+}
+
 #container {
   width: 100vw;
   height: 100vh;
-  background-color: #ccc;
 }
 
 #container > div {
   width: 200px;
   height: 200px;
+  --position:100px
+  ;
 }
 
 #container > div:nth-child(1) {
   background-color: red;
   position: absolute;
   left: 200px;
-  top: 100px;
+  top: 50px;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  -webkit-animation: 1s move infinite;
+          animation: 1s move infinite;
 }
 
 #container > div:nth-child(2) {
   background-color: blue;
   position: absolute;
-  left: 400px;
-  top: 120px;
+  left: 150px;
+  top: 150px;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  -webkit-animation: 1s move infinite;
+          animation: 1s move infinite;
 }
 
 #container > div:nth-child(3) {
   background-color: green;
   position: absolute;
-  left: 500px;
-  top: 130px;
+  left: 300px;
+  top: 80px;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  -webkit-animation: 1s move infinite;
+          animation: 1s move infinite;
 }
 
 #container > div:nth-child(4) {
   background-color: purple;
   position: absolute;
-  left: 600px;
-  top: 140px;
+  left: 250px;
+  top: 200px;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  -webkit-animation: 1s move infinite;
+          animation: 1s move infinite;
 }
 /*# sourceMappingURL=style.css.map */
