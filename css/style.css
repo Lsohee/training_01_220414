@@ -18,23 +18,27 @@
   background-color: red;
   position: absolute;
   left: 200px;
+  top: 100px;
 }
 
 #container > div:nth-child(2) {
   background-color: blue;
   position: absolute;
   left: 400px;
+  top: 120px;
 }
 
 #container > div:nth-child(3) {
   background-color: green;
   position: absolute;
   left: 500px;
+  top: 130px;
 }
 
 #container > div:nth-child(4) {
   background-color: purple;
   position: absolute;
   left: 600px;
+  top: 140px;
 }
 /*# sourceMappingURL=style.css.map */
