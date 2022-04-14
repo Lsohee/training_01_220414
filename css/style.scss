@@ -1,5 +1,14 @@
 *{margin:0; padding:0;}
 
+@mixin color ($a){
+  background-color: ($a);
+  position: absolute;
+  
+}
+
+// mixin 굳이 안써도 될것 같지만 연습을 위해 시도함
+
+
 #container{
   width:100vw;
   height:100vh;
@@ -8,10 +17,22 @@
   &>div{
     width:200px;
     height:200px;
+  }
+  &>div:nth-child(1){
+    @include color(red)
 
   }
+
+  &>div:nth-child(2){
+    @include color(blue)
+  }
   
+  &>div:nth-child(3){
+    @include color(green)
+  }
   
-  
+  &>div:nth-child(4){
+    @include color(purple)
+  }
 }
 
