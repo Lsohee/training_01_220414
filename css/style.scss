@@ -2,12 +2,16 @@
 
 @mixin color ($a){
   background-color: ($a);
-  position: absolute;
-  
 }
 
-// mixin 굳이 안써도 될것 같지만 연습을 위해 시도함
+@mixin position ($a){
+  position: absolute;
+  left:(200px+$a)
+}
 
+
+// mixin 굳이 안써도 될것 같지만 연습을 위해 시도함
+// 하나의 mixin에 변수를 두개를 넣는 방법은 없을까 귀찮은데
 
 #container{
   width:100vw;
@@ -19,20 +23,23 @@
     height:200px;
   }
   &>div:nth-child(1){
-    @include color(red)
-
+    @include color(red);
+    @include position (0)
   }
 
   &>div:nth-child(2){
-    @include color(blue)
+    @include color(blue);
+    @include position(200)
   }
   
   &>div:nth-child(3){
-    @include color(green)
+    @include color(green);
+    @include position(300)
   }
   
   &>div:nth-child(4){
-    @include color(purple)
+    @include color(purple);
+    @include position(400)
   }
 }
 
